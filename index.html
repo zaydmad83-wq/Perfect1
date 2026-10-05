@@ -3,373 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERFECT - خدمات تنظيف المفروشات</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>PERFECT CLEAN - بيرفكت كلين</title>
     <style>
         :root {
-            --primary-color: #e65100;
-            --secondary-color: #f57c00;
-            --accent-color: #ffb74d;
-            --dark-color: #212121;
-            --bg-color: #f8f9fa;
+            --primary: #2563eb;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --fb-color: #1877f2;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: #333;
-            line-height: 1.6;
-            padding-bottom: 80px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #ffffff, #fff3e0);
-            text-align: center;
-            padding: 25px 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .logo-container {
-            max-width: 180px;
-            margin: 0 auto 10px;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-        }
-
-        header h1 {
-            color: var(--dark-color);
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        header p {
-            color: #666;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .container {
-            padding: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin: 20px 0 15px;
-            color: var(--primary-color);
-            font-size: 20px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary-color);
-            margin: 5px auto 0;
-            border-radius: 2px;
-        }
-
-        .price-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-right: 5px solid var(--secondary-color);
-        }
-
-        .price-card .info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .price-card i {
-            font-size: 20px;
-            color: var(--primary-color);
-            width: 30px;
-            text-align: center;
-        }
-
-        .price-card h3 {
-            font-size: 16px;
-            color: var(--dark-color);
-        }
-
-        .price-card .price {
-            font-weight: bold;
-            color: var(--primary-color);
-            background: #fff3e0;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 15px;
-            white-space: nowrap;
-        }
-
-        .sub-list {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border-right: 5px solid var(--secondary-color);
-        }
-
-        .sub-list-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-        }
-
-        .sub-list-header i {
-            font-size: 20px;
-            color: var(--primary-color);
-        }
-
-        .sub-list-header h3 {
-            font-size: 16px;
-            color: var(--dark-color);
-        }
-
-        .sub-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            font-size: 14px;
-            border-bottom: 1px dashed #f0f0f0;
-        }
-
-        .sub-item:last-child {
-            border-bottom: none;
-        }
-
-        .gallery-title {
-            margin-top: 25px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            background: #fff;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .gallery-caption {
-            padding: 8px;
-            text-align: center;
-            font-size: 13px;
-            color: #555;
-            background: #fff;
-            font-weight: bold;
-        }
-
-        .contact-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            display: flex;
-            padding: 10px 15px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 25px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 15px;
-        }
-
-        .btn-call {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light); color: var(--dark); padding-bottom: 70px; }
+        
+        /* Header */
+        header { background: var(--white); padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header img { max-width: 110px; height: auto; border-radius: 8px; }
+        header h1 { font-size: 1.3rem; color: var(--primary); margin-top: 5px; }
+        
+        /* Tab Navigation */
+        .nav-tabs { display: flex; justify-content: space-around; background: var(--white); border-bottom: 2px solid #e2e8f0; position: sticky; top: 0; z-index: 99; }
+        .tab-btn { flex: 1; padding: 12px 2px; border: none; background: none; font-weight: bold; font-size: 0.85rem; color: #64748b; border-bottom: 3px solid transparent; cursor: pointer; transition: 0.3s; }
+        .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); background-color: #eff6ff; }
+        
+        /* Content Sections */
+        .tab-content { display: none; padding: 20px 15px; max-width: 600px; margin: 0 auto; }
+        .tab-content.active { display: block; }
+        
+        /* Cards */
+        .card { background: var(--white); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .service-img { width: 100%; border-radius: 8px; margin-bottom: 10px; object-fit: cover; max-height: 200px; }
+        
+        /* FB Media Cards */
+        .media-card { display: flex; flex-direction: column; gap: 10px; border-right: 4px solid var(--fb-color); }
+        .btn-fb { background-color: var(--fb-color); color: white; text-decoration: none; padding: 10px; border-radius: 6px; text-align: center; font-weight: bold; font-size: 0.9rem; display: flex; justify-content: center; align-items: center; gap: 6px; }
+        
+        /* Forms */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+        .btn-submit { width: 100%; background: #22c55e; color: white; border: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
+        
+        /* Reviews */
+        .review-card { border-right: 4px solid var(--accent); }
+        .stars { color: var(--accent); margin-bottom: 5px; }
+        
+        /* Floating WA */
+        .float-wa { position: fixed; bottom: 15px; left: 15px; background: #25d366; color: white; padding: 12px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <!-- ضع صورة اللوجو باسم logo.jpg في نفس المجلد -->
-            <img src="logo.jpg" alt="PERFECT Logo">
-        </div>
-        <h1>PERFECT للخدمات المنزلية</h1>
-        <p>متخصصون في تنظيف المفروشات بأعلى جودة</p>
+        <img src="logo.jpg" alt="PERFECT CLEAN Logo">
+        <h1>بيرفكت كلين - PERFECT CLEAN</h1>
+        <p style="font-size:0.85rem; color:#64748b;">تنظيف وتغسيل المفروشات والأنتريهات بأحدث التقنيات</p>
     </header>
 
-    <div class="container">
-
-        <h2 class="section-title">أسعار خدمات التنظيف</h2>
-
-        <!-- الأنتريه -->
-        <div class="price-card">
-            <div class="info">
-                <i class="fas fa-couch"></i>
-                <h3>الأنتريه</h3>
-            </div>
-            <div class="price">400 جنيه</div>
-        </div>
-
-        <!-- الصالون -->
-        <div class="price-card">
-            <div class="info">
-                <i class="fas fa-chair"></i>
-                <h3>الصالون</h3>
-            </div>
-            <div class="price">400 جنيه</div>
-        </div>
-
-        <!-- الركنة -->
-        <div class="sub-list">
-            <div class="sub-list-header">
-                <i class="fas fa-couch"></i>
-                <h3>الركنة</h3>
-            </div>
-            <div class="sub-item">
-                <span>قطعتين</span>
-                <strong>350 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>ثلاث قطع</span>
-                <strong>400 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>أربع قطع</span>
-                <strong>450 جنيه</strong>
-            </div>
-        </div>
-
-        <!-- اليزي بوي -->
-        <div class="price-card">
-            <div class="info">
-                <i class="fas fa-user-nurse"></i>
-                <h3>اليزي بوي</h3>
-            </div>
-            <div class="price">400 جنيه</div>
-        </div>
-
-        <!-- المراتب -->
-        <div class="sub-list">
-            <div class="sub-list-header">
-                <i class="fas fa-bed"></i>
-                <h3>المراتب</h3>
-            </div>
-            <div class="sub-item">
-                <span>مرتبة أطفال</span>
-                <strong>200 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>مرتبة كبيرة</span>
-                <strong>250 جنيه</strong>
-            </div>
-        </div>
-
-        <!-- كرسي السفرة -->
-        <div class="sub-list">
-            <div class="sub-list-header">
-                <i class="fas fa-utensils"></i>
-                <h3>كرسي السفرة</h3>
-            </div>
-            <div class="sub-item">
-                <span>قاعدة فقط</span>
-                <strong>25 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>قاعدة وضهر</span>
-                <strong>35 جنيه</strong>
-            </div>
-        </div>
-
-        <!-- السجاد والستائر -->
-        <div class="sub-list">
-            <div class="sub-list-header">
-                <i class="fas fa-rug"></i>
-                <h3>السجاد والستائر والمفروشات</h3>
-            </div>
-            <div class="sub-item">
-                <span>متر السجاد</span>
-                <strong>25 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>متر الستائر</span>
-                <strong>25 جنيه</strong>
-            </div>
-            <div class="sub-item">
-                <span>متر الموكيت</span>
-                <strong>25 جنيه</strong>
-            </div>
-        </div>
-
-        <!-- معرض صور الشغل -->
-        <h2 class="section-title gallery-title">معرض أعمالنا (قبل وبعد)</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="work1.jpg" alt="تنظيف ركنة - قبل وبعد">
-                <div class="gallery-caption">نتائج تنظيف الركنة (قبل وبعد)</div>
-            </div>
-        </div>
-
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(event, 'home')">الرئيسية</button>
+        <button class="tab-btn" onclick="switchTab(event, 'gallery')">فيديوهات وأعمالنا</button>
+        <button class="tab-btn" onclick="switchTab(event, 'booking')">احجز الآن</button>
+        <button class="tab-btn" onclick="switchTab(event, 'reviews')">التقييمات</button>
     </div>
 
-    <!-- أزرار التواصل السريع -->
-    <div class="contact-bar">
-        <!-- استبدل الرقم برقم هاتفك -->
-        <a href="tel:01000000000" class="btn btn-call">
-            <i class="fas fa-phone-alt"></i> اتصل بنا
-        </a>
-        <!-- استبدل الرقم برقم الواتساب بالصيغة الدولية مثلاً: 201000000000 -->
-        <a href="https://wa.me/201000000000" class="btn btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> واتساب
-        </a>
+    <!-- 1. TAB: HOME -->
+    <div id="home" class="tab-content active">
+        <div class="card" style="text-align: center;">
+            <h2 style="color:var(--primary); margin-bottom: 8px;">أقوى عروض التنظيف المنزلي!</h2>
+            <p style="font-size: 0.95rem; color:#475569; margin-bottom: 12px;">نرجعلك مفروشات بيتك جديدة وفي مكانها بدون كركبة ولا بهدلة.</p>
+            <img src="work1.jpg" alt="معاينة التنظيف" class="service-img">
+            <button class="btn-submit" style="background:var(--primary);" onclick="switchTab(null, 'booking')">احجز موعدك الآن</button>
+        </div>
+
+        <div class="card">
+            <h3>لماذا تختار بيرفكت كلين؟</h3>
+            <ul style="margin-right: 20px; margin-top: 10px; line-height: 1.8;">
+                <li>تنظيف بالبخار والتعقيم الكامل.</li>
+                <li>إزالة البقع الصعبة مع الحفاظ على الألوان والأقمشة.</li>
+                <li>خدمة منزلية سريعة وبدون الحاجة لنقل العفش.</li>
+                <li>تجفيف سريع بأحدث الأجهزة.</li>
+            </ul>
+        </div>
     </div>
 
+    <!-- 2. TAB: GALLERY & FB LINKS -->
+    <div id="gallery" class="tab-content">
+        <h2 style="margin-bottom: 15px; color:var(--primary); text-align:center;">نماذج وفيديوهات من أعمالنا</h2>
+        
+        <div class="card media-card">
+            <h3>🎬 فيديو: عملية تنظيف وتعقيم أنتريه</h3>
+            <p style="font-size: 0.85rem; color: #64748b;">شاهد نتائج النظافة والتجفيف السريع خطوة بخطوة.</p>
+            <a href="https://www.facebook.com/reel/1375150831355273/?app=fbl" target="_blank" class="btn-fb">مشاهدة الفيديو على فيسبوك ↗</a>
+        </div>
+
+        <div class="card media-card">
+            <h3>🎬 فيديو: نتائج غسيل وإزالة البقع</h3>
+            <p style="font-size: 0.85rem; color: #64748b;">طريقة التعامل مع البقع الصعبة وإعادة الألوان الأصلي.</p>
+            <a href="https://www.facebook.com/reel/1126093660098145/?app=fbl" target="_blank" class="btn-fb">مشاهدة الفيديو على فيسبوك ↗</a>
+        </div>
+
+        <div class="card media-card">
+            <h3>🎬 فيديو: تنظيف ركنة في المكان</h3>
+            <p style="font-size: 0.85rem; color: #64748b;">معاينة حية للعمل داخل منزل أحد العملاء الكرام.</p>
+            <a href="https://www.facebook.com/reel/1025552313804897/?app=fbl" target="_blank" class="btn-fb">مشاهدة الفيديو على فيسبوك ↗</a>
+        </div>
+
+        <div class="card media-card">
+            <h3>📸 صور قبل وبعد: تنظيف المراتب والأنتريهات</h3>
+            <p style="font-size: 0.85rem; color: #64748b;">مجموعة صور توضح الفرق الدقيق قبل وبعد التنظيف.</p>
+            <a href="https://www.facebook.com/61565927013176/posts/122210952500530900/?app=fbl" target="_blank" class="btn-fb">مشاهدة صور المنشور ↗</a>
+        </div>
+
+        <div class="card media-card">
+            <h3>📸 صور قبل وبعد: غسيل السجاد والستائر</h3>
+            <p style="font-size: 0.85rem; color: #64748b;">معاينة صور أعمالنا في تنظيف السجاد والأثاث.</p>
+            <a href="https://www.facebook.com/61565927013176/posts/122212434776530900/?app=fbl" target="_blank" class="btn-fb">مشاهدة صور المنشور ↗</a>
+        </div>
+    </div>
+
+    <!-- 3. TAB: BOOKING FORM -->
+    <div id="booking" class="tab-content">
+        <div class="card">
+            <h2 style="margin-bottom: 15px; color:var(--primary);">استمارة تفاصيل الحجز</h2>
+            <form id="whatsappForm" onsubmit="sendBooking(event)">
+                <div class="form-group">
+                    <label>الاسم بالكامل *</label>
+                    <input type="text" id="custName" placeholder="أدخل اسمك الكريم" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / الواتساب *</label>
+                    <input type="tel" id="custPhone" placeholder="01xxxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>المنطقة / المحافظة *</label>
+                    <select id="custArea" required>
+                        <option value="">اختر المنطقة</option>
+                        <option value="القاهرة">القاهرة</option>
+                        <option value="الجيزة">الجيزة</option>
+                        <option value="القليوبية">القليوبية</option>
+                        <option value="منطقة أخرى">منطقة أخرى</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>العنوان التفصيلي *</label>
+                    <input type="text" id="custAddress" placeholder="الشارع، رقم العمارة، الشقة" required>
+                </div>
+                <div class="form-group">
+                    <label>الخدمة المطلوبة *</label>
+                    <select id="custService" required>
+                        <option value="تنظيف أنتريه / صالون">تنظيف أنتريه / صالون</option>
+                        <option value="تنظيف ركنة">تنظيف ركنة</option>
+                        <option value="غسيل مراتب">غسيل مراتب</option>
+                        <option value="غسيل سجاد / موكيت">غسيل سجاد / موكيت</option>
+                        <option value="تنظيف ستائر">تنظيف ستائر</option>
+                        <option value="خدمة مجمعة (أكثر من خدمة)">خدمة مجمعة (أكثر من خدمة)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>تاريخ الموعد المفضل *</label>
+                    <input type="date" id="custDate" required>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات إضافية (اختياري)</label>
+                    <textarea id="custNotes" rows="2" placeholder="أي تفاصيل أخرى تريد إضافتها..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">تأكيد وإرسال عبر الواتساب 💬</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. TAB: REVIEWS -->
+    <div id="reviews" class="tab-content">
+        <h2 style="margin-bottom: 15px; color:var(--primary);">آراء عملاء بيرفكت كلين</h2>
+        
+        <div class="card review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p><strong>أم أحمد - القاهرة</strong></p>
+            <p style="font-size:0.9rem; color:#475569; margin-top:5px;">"الانتريه كان فيه بقع صعبة جداً من الأطفال، والشباب عملوا شغل فوق الممتاز ورجع جديد."</p>
+        </div>
+
+        <div class="card review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p><strong>م. أسامة - الجيزة</strong></p>
+            <p style="font-size:0.9rem; color:#475569; margin-top:5px;">"التزام ممتاز بالوقت، ونظافة وسرعة في التجفيف. شكراً جداً لكم."</p>
+        </div>
+
+        <div class="card review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p><strong>أستاذة هبة - الشيخ زايد</strong></p>
+            <p style="font-size:0.9rem; color:#475569; margin-top:5px;">"خدمة الستائر والمراتب عندهم ممتازة جداً وبدون أي كركبة في البيت."</p>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201154344917" class="float-wa" target="_blank">
+        💬 تواصل مباشر
+    </a>
+
+    <script>
+        function switchTab(e, tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            
+            if(e) {
+                e.currentTarget.classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            }
+            window.scrollTo(0,0);
+        }
+
+        function sendBooking(e) {
+            e.preventDefault();
+            const phone = "201154344917";
+            const name = document.getElementById('custName').value;
+            const custPhone = document.getElementById('custPhone').value;
+            const area = document.getElementById('custArea').value;
+            const address = document.getElementById('custAddress').value;
+            const service = document.getElementById('custService').value;
+            const date = document.getElementById('custDate').value;
+            const notes = document.getElementById('custNotes').value;
+
+            const text = `السلام عليكم، أرغب في حجز موعد مع بيرفكت كلين:%0A` +
+                         `👤 *الاسم:* ${name}%0A` +
+                         `📞 *الهاتف:* ${custPhone}%0A` +
+                         `📍 *المنطقة:* ${area}%0A` +
+                         `🏠 *العنوان:* ${address}%0A` +
+                         `🧹 *الخدمة:* ${service}%0A` +
+                         `📅 *التاريخ:* ${date}%0A` +
+                         `📝 *ملاحظات:* ${notes || 'لا يوجد'}`;
+
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+    </script>
 </body>
-</html>
+                </html>
+                
